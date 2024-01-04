@@ -328,7 +328,6 @@ export const PurchaseOrderPage = () => {
             loading={loading}
           />
         )}
-      </CardBody>
     </Card>
   );
 };
