@@ -150,7 +150,7 @@ export const PaymentPage = () => {
       <LoadingFetchData active={overlayLoading} />
       <CardBody>
         {/* Filter */}
-        <Form>
+        <Form></Form>
           <Form.Group as={Row}>
             <Col sm={6}>
               {user.vendor_code !== null && (
@@ -203,6 +203,7 @@ export const PaymentPage = () => {
                 </Col>
               </Form.Group>
             </Col>
+      </Form.Group>
             {/* Right Row */}
 
             <Col sm={6}>
@@ -254,6 +255,42 @@ export const PaymentPage = () => {
                 </Col>
               </Form.Group> */}
 
+              <Col sm={6}>
+              <Form.Group as={Row}>
+                <Col sm={12}>
+                  {user.purch_org !== null && (
+                    <Form.Group as={Row} className="mt-5">
+                      <Form.Label column sm={6}>
+                        <b>Purchasing Organization</b>
+                      </Form.Label>
+                      <Col sm={6}>
+                        <Form.Control
+                          type="text"
+                          placeholder="Purchasing Organization"
+                          value={user.purch_org}
+                          disabled
+                        />
+                      </Col>
+                    </Form.Group>
+                  )}
+                  {user.purch_org === null && (
+                    <Form.Group as={Row} className="mt-5">
+                      <Form.Label column sm={6}>
+                        <b>Purchasing Organization</b>
+                      </Form.Label>
+                      <Col sm={6}>
+                        <Form.Control
+                          type="text"
+                          placeholder="Purchasing Organization"
+                          onChange={(e) => {
+                            setVendorCode(e.target.value);
+                          }}
+                          value={vendorCode}
+                          onKeyPress={handleKeyPress}
+                        />
+                      </Col>
+                    </Form.Group>
+                  )}
               <Form.Group as={Row}>
                 <Col sm={6}>
                   <Button className="btn btn-danger " onClick={handleSearch}>
@@ -263,8 +300,8 @@ export const PaymentPage = () => {
               </Form.Group>
             </Col>
           </Form.Group>
-        </Form>
-
+        </Col>
+    </Col>
         {/* Table */}
         {data && data.length > 0 && (
           <PaymentTable
@@ -279,4 +316,4 @@ export const PaymentPage = () => {
       </CardBody>
     </Card>
   );
-};
+        };
