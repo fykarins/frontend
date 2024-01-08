@@ -162,7 +162,7 @@ export const InvoicePage = () => {
       <LoadingFetchData active={overlayLoading} />
       <CardBody>
         {/* Filter */}
-        <CardBody className="mb-5">
+        <Form className="mb-5">
           <Form.Group as={Row}>
             <Col sm={6}>
               {user.vendor_code !== null && (
@@ -271,30 +271,22 @@ export const InvoicePage = () => {
                         </Col>
                       </Form.Group>
                     )}
-                  </Col>
-                  </Form.Group>
-                  </Col>
-
-                  <Col sm={12}>
-                  <Form.Group as={Row}>
-                    <Col sm={3}>
-                      
-                    </Col>
-                  </Form.Group>
-                  <Button className="btn btn-danger" onClick={handleSearch}>
+                    <Button className="btn btn-danger" onClick={handleSearch}>
                       Search
-                  </Button>
+                    </Button>
                   </Col>
-                    {/* <Col sm={3}>
-                      <Button
-                        className="btn btn-danger"
-                        onClick={() => history.push("/masterdata/vendor-create")}
-                      >
-                        Create
-                      </Button>
-                    </Col> */}
-                  </Form.Group>
-            </CardBody>
+                  {/* <Col sm={3}>
+                    <Button
+                      className="btn btn-danger"
+                      onClick={() => history.push("/masterdata/vendor-create")}
+                    >
+                      Create
+                    </Button>
+                  </Col> */}
+              </Form.Group>
+            </Col>
+          </Form.Group>
+        </Form>
 
         {/* Table */}
         {data && data.length > 0 && (
