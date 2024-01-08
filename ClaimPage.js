@@ -241,7 +241,6 @@ export const ClaimPage = () => {
                 </Col>
               </Form.Group>
             
-              <Col sm={6}>
               <Form.Group as={Row}>
                 <Col sm={6}>
                   {user.purch_org !== null && (
@@ -277,23 +276,16 @@ export const ClaimPage = () => {
                       </Col>
                     </Form.Group>
                   )}
+                  <Button className="btn btn-danger" onClick={handleSearch}>
+                      Search
+                  </Button>
                 </Col>
               </Form.Group>
-              </Col>
-          
-              <Col sm={12}>
-                <Form.Group as={Row}>
-                  <Col sm={3}>
-                    <Button className="btn btn-danger" onClick={handleSearch}>
-                      Search
-                    </Button>
-                  </Col>
-                </Form.Group>
-              </Col>
-            </Col>
+            </Col> 
+
           </Form.Group>
-        </Form>
-      
+       </Form>   
+  
         {/* Table */}
         {data && data.length > 0 && (
           <ClaimTable
@@ -305,6 +297,7 @@ export const ClaimPage = () => {
             loading={loading}
           />
         )}
+        
       </CardBody>
     </Card>
   );
