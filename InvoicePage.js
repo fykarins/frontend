@@ -55,10 +55,11 @@ export const InvoicePage = () => {
       ref_doc_no: refDocNo,
       alloc_nmbr: allocNmbr,
       with_po: "Y",
-      purch_org: user.purch_org,
+      value: user.purch_org,
       pageNo: 1,
       pageSize: 10,
     };
+    console.log("test value : "+params.value);
     try {
       const response = await dispatch(fetchInvoice(params));
       if (response.payload.data.status === 200) {
