@@ -162,7 +162,7 @@ export const InvoicePage = () => {
       <LoadingFetchData active={overlayLoading} />
       <CardBody>
         {/* Filter */}
-        <Form className="mb-5">
+        <CardBody className="mb-5">
           <Form.Group as={Row}>
             <Col sm={6}>
               {user.vendor_code !== null && (
@@ -294,9 +294,7 @@ export const InvoicePage = () => {
                       </Button>
                     </Col> */}
                   </Form.Group>
-                </Col>
-              </Form.Group>
-            </Form>
+            </CardBody>
 
         {/* Table */}
         {data && data.length > 0 && (
